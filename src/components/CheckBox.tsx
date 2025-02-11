@@ -11,7 +11,7 @@ const CheckBox = (props: { onCheck: () => void; isChecked: boolean }) => {
 
   return (
     <div
-      className={`w-5 h-5 rounded-full border border-neutral-light-theme-light-grayish-blue  cursor-pointer flex items-center justify-center ${
+      className={`w-5 h-5 rounded-full border border-neutral-light-theme-light-grayish-blue  cursor-pointer flex items-center justify-center dark:border-neutral-dark-theme-very-drak-grayish-blue-second ${
         isChecked
           ? "bg-gradient-to-br from-gradient-blue to-gradient-purple"
           : "bg-transparent"

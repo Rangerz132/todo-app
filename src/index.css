@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -6,8 +6,8 @@
 
   --color-primary-bright-blue: hsl(220, 98%, 61%);
 
-  --color-gradient-blue:hsl(192, 100%, 67%);
-  --color-gradient-purple:hsl(280, 87%, 65%);
+  --color-gradient-blue: hsl(192, 100%, 67%);
+  --color-gradient-purple: hsl(280, 87%, 65%);
 
   --color-neutral-light-theme-very-light-gray: hsl(0, 0%, 98%);
   --color-neutral-light-theme-very-light-grayish-blue: hsl(236, 33%, 92%);
@@ -15,22 +15,27 @@
   --color-neutral-light-theme-dark-grayish-blue: hsl(236, 9%, 61%);
   --color-neutral-light-theme-very-drak-grayish-blue: hsl(235, 19%, 35%);
 
-  --color-neutral-dark-theme-very-dark-blue: hsl(235, 21%, 11%)
-  --color-neutral-dark-theme-very-dark-desaturated-blue: hsl(235, 24%, 19%)
-  --color-neutral-dark-theme-light-grayish-blue-main: hsl(234, 39%, 85%)
-  --color-neutral-dark-theme-light-grayish-blue-second: hsl(236, 33%, 92%)
-  --color-neutral-dark-theme-dark-grayish-blue: hsl(234, 11%, 52%)
-  --color-neutral-dark-theme-very-dark-grayish-blue-main:hsl(233, 14%, 35%)
-  --color-neutral-dark-theme-very-drak-grayish-blue-second:hsl(237, 14%, 26%)
+  --color-neutral-dark-theme-very-dark-blue: hsl(235, 21%, 11%);
+  --color-neutral-dark-theme-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --color-neutral-dark-theme-light-grayish-blue-main: hsl(234, 39%, 85%);
+  --color-neutral-dark-theme-light-grayish-blue-second: hsl(236, 33%, 92%);
+  --color-neutral-dark-theme-dark-grayish-blue: hsl(234, 11%, 52%);
+  --color-neutral-dark-theme-very-dark-grayish-blue-main: hsl(233, 14%, 35%);
+  --color-neutral-dark-theme-very-drak-grayish-blue-second: hsl(237, 14%, 26%);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
-  body{
-    @apply font-josefin-sans  transition-all
+  body {
+    @apply font-josefin-sans transition-all duration-300;
   }
 
-  div, p, span, input{
-    @apply text-sm 
+  div,
+  p,
+  span,
+  input {
+    @apply text-sm;
   }
 }
 
@@ -39,4 +44,3 @@
     @apply mx-auto max-w-[768px] px-6;
   }
 }
-

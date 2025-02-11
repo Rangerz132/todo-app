@@ -10,7 +10,7 @@ const TaskItem = () => {
   }
 
   return (
-    <div className="w-full  border-b border-neutral-light-theme-light-grayish-blue px-6 py-5 flex flex-row justify-between items-center">
+    <div className="w-full  border-b border-neutral-light-theme-light-grayish-blue px-6 py-5 flex flex-row justify-between items-center dark:border-neutral-dark-theme-very-drak-grayish-blue-second">
       <div className="flex flex-row space-x-4">
         {/** Checkbox */}
         <CheckBox onCheck={() => handleCheck()} isChecked={isChecked} />
@@ -18,8 +18,8 @@ const TaskItem = () => {
         <div
           className={` ${
             isChecked
-              ? "text-neutral-light-theme-light-grayish-blue line-through"
-              : "text-neutral-light-theme-very-drak-grayish-blue"
+              ? "text-neutral-light-theme-light-grayish-blue line-through dark:text-neutral-dark-theme-very-dark-grayish-blue-main"
+              : "text-neutral-light-theme-very-drak-grayish-blue dark:text-neutral-dark-theme-light-grayish-blue-main"
           } transition-all`}
         >
           Jog around the park 3x
