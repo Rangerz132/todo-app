@@ -6,6 +6,9 @@
 
   --color-primary-bright-blue: hsl(220, 98%, 61%);
 
+  --color-gradient-blue:hsl(192, 100%, 67%);
+  --color-gradient-purple:hsl(280, 87%, 65%);
+
   --color-neutral-light-theme-very-light-gray: hsl(0, 0%, 98%);
   --color-neutral-light-theme-very-light-grayish-blue: hsl(236, 33%, 92%);
   --color-neutral-light-theme-light-grayish-blue: hsl(233, 11%, 84%);
@@ -23,11 +26,11 @@
 
 @layer base {
   body{
-    @apply font-josefin-sans bg-neutral-light-theme-very-light-gray dark:bg-neutral-dark-theme-very-dark-blue
+    @apply font-josefin-sans  transition-all
   }
 
-  div, p, span{
-    @apply text-lg 
+  div, p, span, input{
+    @apply text-sm 
   }
 }
 
@@ -36,3 +39,4 @@
     @apply mx-auto max-w-[768px] px-6;
   }
 }
+
