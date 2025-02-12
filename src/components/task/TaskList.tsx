@@ -1,4 +1,5 @@
 import { TaskType } from "../../types/taskType";
+import TaskInfo from "./TaskInfo";
 import TaskItem from "./TaskItem";
 
 const TaskList = (props: { tasks: TaskType[] }) => {
@@ -7,6 +8,9 @@ const TaskList = (props: { tasks: TaskType[] }) => {
       {props.tasks.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
+      <div className="px-6 py-5 md:hidden">
+        <TaskInfo />
+      </div>
     </div>
   );
 };

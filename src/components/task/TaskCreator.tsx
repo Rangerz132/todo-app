@@ -3,6 +3,7 @@ import CheckBox from "../CheckBox";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../state/task/taskSlice";
 import { TodoAPI } from "../../api/todo-api";
+import { v4 as uuidv4 } from "uuid";
 
 const TaskCreator = () => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -14,7 +15,7 @@ const TaskCreator = () => {
 
   async function createTask(event: React.KeyboardEvent<HTMLInputElement>) {
     const newTask = await TodoAPI.createTask({
-      id: (Math.random() * 10000000).toString(), // To Refactor
+      id: uuidv4(),
       task: event.currentTarget.value,
       completed: isChecked,
     });

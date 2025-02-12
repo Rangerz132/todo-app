@@ -1,24 +1,19 @@
 {
   "tasks": [
     {
-      "task": "Jog 30 min",
-      "completed": true,
-      "id": "121111"
-    },
-    {
-      "id": "3002024.9698160263",
-      "task": "Eat vegetables",
+      "id": "bf16136e-73d7-45c2-840e-ce9ebfs72fed",
+      "task": "Jog 10 times",
       "completed": false
     },
     {
-      "id": "9622481.171435036",
-      "task": "ma",
+      "id": "bf16136e-73d7-45c2-840e-ce9ebff72fed",
+      "task": "Make supper",
       "completed": false
     },
     {
-      "id": "1925866.6646875988",
-      "task": "Eat",
-      "completed": true
+      "id": "a3cec052-f95d-4e0f-b595-d0183ab432ce",
+      "task": "Eat potatoes",
+      "completed": false
     }
   ]
 }

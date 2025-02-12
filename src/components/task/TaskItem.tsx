@@ -5,7 +5,7 @@ import { TaskType } from "../../types/taskType";
 import { TodoAPI } from "../../api/todo-api";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../state/store";
-import { deleteTask } from "../../state/task/taskSlice";
+import { deleteTask, updateTask } from "../../state/task/taskSlice";
 
 const TaskItem = (props: { task: TaskType }) => {
   const [isChecked, setIsChecked] = useState<boolean>(props.task.completed);
@@ -15,16 +15,29 @@ const TaskItem = (props: { task: TaskType }) => {
   const dispatch = useDispatch();
 
   function handleCheck() {
-    setIsChecked((prevState) => !prevState);
+    setIsChecked((prevState) => {
+      const newCheckedState = !prevState;
+      setTask(newCheckedState);
+      return newCheckedState;
+    });
+  }
+  function handleCrossClick() {
+    removeTask();
+  }
+
+  async function setTask(completed: boolean) {
+    const newTask: TaskType = {
+      task: props.task.task,
+      id: props.task.id,
+      completed,
+    };
+    const updatedTask = await TodoAPI.update(newTask);
+    dispatch(updateTask(updatedTask));
   }
 
   async function removeTask() {
     await TodoAPI.deleteTaskById(props.task.id);
     dispatch(deleteTask(currentTask));
-  }
-
-  function handleCrossClick() {
-    removeTask();
   }
 
   return (
