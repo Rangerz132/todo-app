@@ -1,12 +1,22 @@
 import { useState } from "react";
 import CheckBox from "../CheckBox";
 import CrossIcon from "../../assets/images/icon-cross.svg";
+import { TaskType } from "../../types/taskType";
+import { TodoAPI } from "../../api/todo-api";
 
-const TaskItem = () => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+const TaskItem = (props: { task: TaskType }) => {
+  const [isChecked, setIsChecked] = useState<boolean>(props.task.completed);
 
   function handleCheck() {
     setIsChecked((prevState) => !prevState);
+  }
+
+  async function removeTask() {
+    await TodoAPI.deleteTaskById(props.task.id);
+  }
+
+  function handleCrossClick() {
+    removeTask();
   }
 
   return (
@@ -22,11 +32,14 @@ const TaskItem = () => {
               : "text-neutral-light-theme-very-drak-grayish-blue dark:text-neutral-dark-theme-light-grayish-blue-main"
           } transition-all`}
         >
-          Jog around the park 3x
+          {props.task.task}
         </div>
       </div>
       {/** Cross  */}
-      <div className="cursor-pointer w-4 h-4">
+      <div
+        onClick={() => handleCrossClick()}
+        className="cursor-pointer w-4 h-4"
+      >
         <img src={CrossIcon} alt="Cross icon" />
       </div>
     </div>

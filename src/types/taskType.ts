@@ -1,4 +1,5 @@
 export type TaskType = {
-  completed: boolean;
+  id: string;
   task: string;
+  completed: boolean;
 };
