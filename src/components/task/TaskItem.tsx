@@ -9,10 +9,10 @@ import { deleteTask } from "../../state/task/taskSlice";
 
 const TaskItem = (props: { task: TaskType }) => {
   const [isChecked, setIsChecked] = useState<boolean>(props.task.completed);
-  const dispatch = useDispatch();
   const currentTask = useSelector((store: RootState) =>
     store.task.tasks.find((task) => task.id === props.task.id)
   );
+  const dispatch = useDispatch();
 
   function handleCheck() {
     setIsChecked((prevState) => !prevState);

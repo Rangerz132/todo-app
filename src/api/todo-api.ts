@@ -1,4 +1,5 @@
 import axios from "axios";
+import { TaskType } from "../types/taskType";
 
 const BASE_URL = "http://localhost:3200/tasks";
 
@@ -9,6 +10,10 @@ export class TodoAPI {
 
   public static async getTaskById(taskId: string) {
     return (await axios.get(`${BASE_URL}/${taskId}`)).data;
+  }
+
+  public static async createTask(task: TaskType) {
+    return (await axios.post(BASE_URL, task)).data;
   }
 
   public static async updateTaskById(taskId: string) {
