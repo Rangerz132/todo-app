@@ -1,29 +1,14 @@
 {
   "tasks": [
     {
-      "task": "Complete online javaScript course",
+      "task": "Jog 30 min",
       "completed": true,
-      "id": "d1c2"
-    },
-    {
-      "task": "10 minutes meditation",
-      "completed": false,
-      "id": "bbc7"
-    },
-    {
-      "task": "Read for 1 hour",
-      "completed": false,
-      "id": "33e2"
-    },
-    {
-      "task": "Pick up groceries",
-      "completed": false,
-      "id": "23e5"
+      "id": "121111"
     },
     {
       "task": "Jog 30 min",
       "completed": true,
-      "id": "111"
+      "id": "22"
     }
   ]
 }

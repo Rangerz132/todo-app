@@ -3,9 +3,16 @@ import CheckBox from "../CheckBox";
 import CrossIcon from "../../assets/images/icon-cross.svg";
 import { TaskType } from "../../types/taskType";
 import { TodoAPI } from "../../api/todo-api";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../state/store";
+import { deleteTask } from "../../state/task/taskSlice";
 
 const TaskItem = (props: { task: TaskType }) => {
   const [isChecked, setIsChecked] = useState<boolean>(props.task.completed);
+  const dispatch = useDispatch();
+  const currentTask = useSelector((store: RootState) =>
+    store.task.tasks.find((task) => task.id === props.task.id)
+  );
 
   function handleCheck() {
     setIsChecked((prevState) => !prevState);
@@ -13,6 +20,7 @@ const TaskItem = (props: { task: TaskType }) => {
 
   async function removeTask() {
     await TodoAPI.deleteTaskById(props.task.id);
+    dispatch(deleteTask(currentTask));
   }
 
   function handleCrossClick() {
