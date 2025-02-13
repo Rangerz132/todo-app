@@ -5,12 +5,15 @@ import App from "./App.tsx";
 import { Provider } from "react-redux";
 import { store } from "./state/store";
 import ThemeContextProvider from "./contexts/ThemeContext.tsx";
+import TaskFilterContextProvider from "./contexts/TaskFilterContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
       <ThemeContextProvider>
-        <App />
+        <TaskFilterContextProvider>
+          <App />
+        </TaskFilterContextProvider>
       </ThemeContextProvider>
     </Provider>
   </StrictMode>

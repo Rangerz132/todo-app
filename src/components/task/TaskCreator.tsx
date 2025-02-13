@@ -25,13 +25,19 @@ const TaskCreator = () => {
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
+      if (event.currentTarget.value === "") {
+        return;
+      }
+
       createTask(event);
+      setIsChecked(false);
+      event.currentTarget.value = "";
     }
   }
 
   return (
     <div className="w-full bg-white rounded-md px-6 py-4 flex flex-row space-x-4 dark:bg-neutral-dark-theme-very-dark-desaturated-blue">
-      <CheckBox onCheck={() => handleCheck()} isChecked={false} />
+      <CheckBox onCheck={() => handleCheck()} isChecked={isChecked} />
       <input
         type="text"
         placeholder="Create a new todo..."

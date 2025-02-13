@@ -24,7 +24,7 @@ const TaskInfo = () => {
   }
 
   return (
-    <div className="flex flex-row items-center justify-between text-neutral-light-theme-light-grayish-blue  dark:text-neutral-dark-theme-very-dark-grayish-blue-main transition-all duration-300">
+    <div className="flex flex-row items-center justify-between text-neutral-light-theme-very-drak-grayish-blue dark:text-neutral-dark-theme-very-dark-grayish-blue-main transition-all duration-300">
       <div className="cursor-pointer hover:text-primary-bright-blue">
         {uncompletedTaskList.length}{" "}
         {uncompletedTaskList.length > 1 ? "items" : "item"} left

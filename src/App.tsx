@@ -7,14 +7,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./state/store";
 import { setTaskList } from "./state/task/taskSlice";
 import TaskManager from "./components/task/TaskManager";
+import {
+  TaskFilterContext,
+  useTaskContextFilter,
+} from "./contexts/TaskFilterContext";
+import { TaskType } from "./types/taskType";
 
 function App() {
   const taskList = useSelector((store: RootState) => store.task.tasks);
   const dispatch = useDispatch();
+  const { taskFilter } = useTaskContextFilter(TaskFilterContext);
 
   async function fetchData() {
     try {
-      const fetchedTasks = await TodoAPI.getTasks();
+      const fetchedTasks: TaskType[] = await TodoAPI.getTasks();
       dispatch(setTaskList(fetchedTasks));
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -24,6 +30,18 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    let filterTasks: TaskType[] = [];
+    if (taskFilter === "All") {
+      filterTasks = taskList;
+    } else if (taskFilter === "Active") {
+      filterTasks = taskList.filter((task) => !task.completed);
+    } else {
+      filterTasks = taskList.filter((task) => task.completed);
+    }
+    dispatch(setTaskList(filterTasks));
+  }, [taskFilter]);
 
   return (
     <div className="w-full h-screen bg-neutral-light-theme-very-light-grayish-blue dark:bg-neutral-dark-theme-very-dark-blue ">
