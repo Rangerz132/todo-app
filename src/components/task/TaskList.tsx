@@ -8,7 +8,12 @@ const TaskList = (props: { tasks: TaskType[] }) => {
       {props.tasks.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
+      {/** Mobile Task info */}
       <div className="px-6 py-5 md:hidden">
+        <TaskInfo />
+      </div>
+      {/** Desktop Task info */}
+      <div className="px-6 py-5 hidden md:flex">
         <TaskInfo />
       </div>
     </div>

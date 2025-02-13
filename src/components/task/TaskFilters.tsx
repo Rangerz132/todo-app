@@ -13,7 +13,7 @@ const TaskFilters = () => {
   }
 
   return (
-    <div className="flex flex-row justify-center space-x-4 px-6 py-4">
+    <div className="flex flex-row justify-center space-x-4 ">
       {taskFilters.map((filter) => (
         <div
           key={filter}
@@ -22,7 +22,7 @@ const TaskFilters = () => {
             taskFilter === filter
               ? "text-primary-bright-blue"
               : "text-neutral-light-theme-very-drak-grayish-blue dark:text-neutral-dark-theme-very-dark-grayish-blue-main"
-          } font-semibold transition-all`}
+          } font-semibold cursor-pointer transition-all hover:text-primary-bright-blue`}
         >
           {filter}
         </div>

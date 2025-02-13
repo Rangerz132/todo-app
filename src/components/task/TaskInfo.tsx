@@ -3,6 +3,7 @@ import { RootState } from "../../state/store";
 import { TaskType } from "../../types/taskType";
 import { TodoAPI } from "../../api/todo-api";
 import { deleteTasks } from "../../state/task/taskSlice";
+import TaskFilters from "./TaskFilters";
 
 const TaskInfo = () => {
   const taskList = useSelector((store: RootState) => store.task.tasks);
@@ -24,11 +25,15 @@ const TaskInfo = () => {
   }
 
   return (
-    <div className="flex flex-row items-center justify-between text-neutral-light-theme-very-drak-grayish-blue dark:text-neutral-dark-theme-very-dark-grayish-blue-main transition-all duration-300">
-      <div className="cursor-pointer hover:text-primary-bright-blue">
+    <div className="flex flex-row items-center justify-between text-neutral-light-theme-very-drak-grayish-blue dark:text-neutral-dark-theme-very-dark-grayish-blue-main transition-all duration-300 w-full">
+      <div>
         {uncompletedTaskList.length}{" "}
         {uncompletedTaskList.length > 1 ? "items" : "item"} left
       </div>
+      <div className="hidden md:flex">
+        <TaskFilters />
+      </div>
+
       <div
         onClick={() => clearCompletedTasks()}
         className="cursor-pointer hover:text-primary-bright-blue"

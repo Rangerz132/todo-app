@@ -8,7 +8,7 @@ const TaskManager = (props: { tasks: TaskType[] }) => {
     <div className="flex flex-col space-y-5">
       <TaskCreator />
       <TaskList tasks={props.tasks} />
-      <div className="w-full rounded-lg bg-white  shadow-2xl shadow-neutral-light-theme-light-grayish-blue dark:bg-neutral-dark-theme-very-dark-desaturated-blue dark:shadow-black">
+      <div className="w-full rounded-lg bg-white  shadow-2xl shadow-neutral-light-theme-light-grayish-blue dark:bg-neutral-dark-theme-very-dark-desaturated-blue dark:shadow-black px-6 py-4 md:hidden">
         <TaskFilters />
       </div>
     </div>

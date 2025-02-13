@@ -21,7 +21,15 @@ function App() {
   async function fetchData() {
     try {
       const fetchedTasks: TaskType[] = await TodoAPI.getTasks();
-      dispatch(setTaskList(fetchedTasks));
+      let filterTasks: TaskType[] = [];
+      if (taskFilter === "All") {
+        filterTasks = fetchedTasks;
+      } else if (taskFilter === "Active") {
+        filterTasks = fetchedTasks.filter((task) => !task.completed);
+      } else {
+        filterTasks = fetchedTasks.filter((task) => task.completed);
+      }
+      dispatch(setTaskList(filterTasks));
     } catch (error) {
       console.error("Error fetching tasks:", error);
     }
@@ -29,18 +37,6 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, []);
-
-  useEffect(() => {
-    let filterTasks: TaskType[] = [];
-    if (taskFilter === "All") {
-      filterTasks = taskList;
-    } else if (taskFilter === "Active") {
-      filterTasks = taskList.filter((task) => !task.completed);
-    } else {
-      filterTasks = taskList.filter((task) => task.completed);
-    }
-    dispatch(setTaskList(filterTasks));
   }, [taskFilter]);
 
   return (
