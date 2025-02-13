@@ -16,8 +16,8 @@ const TaskItem = ({ task }: { task: TaskType }) => {
 
   const handleCheck = async () => {
     const updatedTask = { ...task, completed: !isChecked };
-    await TodoAPI.update(updatedTask);
     dispatch(updateTask(updatedTask));
+    await TodoAPI.update(updatedTask);
   };
 
   const handleCrossClick = async () => {
