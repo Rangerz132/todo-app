@@ -16,8 +16,6 @@ npm run dev
 
 - React: Component-based UI development.
 
-- React Router: Enables seamless navigation within the single-page application.
-
 - Tailwind CSS: Provides utility-first styling for a responsive design.
 
 - Redux : State management for predictable application behavior
