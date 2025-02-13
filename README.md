@@ -40,4 +40,4 @@ npm run dev
 
 ## Media
 
-![](src/assets/design/bg-desktop-light.jpg)
+![](src/assets/design/desktop-design-light.jpg)
