@@ -9,6 +9,21 @@
       "id": "bf16136e-73d7-45c2-840e-ce9ebff72fed",
       "task": "Make supper",
       "completed": false
+    },
+    {
+      "id": "f84c37fc-a94f-46bf-bcc7-8e04d36000bf",
+      "task": "Make the dishes",
+      "completed": false
+    },
+    {
+      "id": "223ca1a0-3c80-42bb-96f6-fc45171dfe6f",
+      "task": "Eat vegetables",
+      "completed": true
+    },
+    {
+      "id": "f935d2d1-050a-4f1d-896d-3c1d2a9f9d79",
+      "task": "Kiss sabrina boulet",
+      "completed": false
     }
   ]
 }
